@@ -13,12 +13,37 @@ let addTask = (task)=>{
     return TaskList.length;
 }
 
-addTask("Work");
-
 // 3.c
 // loops over the array item in the console
-TaskList.forEach((item)=>{
-    console.log(item);
-})
+let listAllTasks =()=>{
+    console.log();
+
+        TaskList.forEach((item)=>{
+            console.log(item);
+    })
+    console.log();
+}
+
+// 3.d
+// delete task from array
+let deleteTask = (task)=>{
+    let index = TaskList.indexOf(task);
+    if(index > -1){
+        TaskList.splice(index, 1);
+        console.log(task +" + has been remove to my TaskList");
+    }
+    else {
+        console.log(task +" is not in the my TaskList");
+    }
+    return TaskList.length;
 
 
+}
+
+addTask("Work");
+addTask("Eat");
+addTask("Sleep");
+listAllTasks();
+deleteTask("Work");
+deleteTask("aslkdjgasl");
+listAllTasks();
